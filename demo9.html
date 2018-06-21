@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>组件属性</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mycomponent menuname="商品库"></mycomponent>
+    </div>
+    <script type="text/javascript">
+        Vue.component('mycomponent', {
+            template: '<a :href="\'/user/\' + menuname">{{ menuname }}</a>',
+            props: ['menuname'],
+        });
+
+        var app = new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

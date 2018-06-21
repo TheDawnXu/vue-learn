@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>演示指令 v-if 和 v-show</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="i in items" v-if="i.result == '1'">{{ i.name }}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="i in items" v-show="i.result == '1'">{{ i.name }}</li>
+        </ul>
+
+    </div>
+    <script type="text/javascript">
+        // v-else v-else-if
+        var app = new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    {name: 'xxx', result:'0'},
+                    {name: 'yyy', result:'1'}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

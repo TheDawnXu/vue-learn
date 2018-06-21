@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>veux-功能演示</title>
+    <script src="./vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+</head>
+<body>
+<body>
+<div id="app">
+    <div>
+        <router-link to="/">首页</router-link>
+        <router-link to="/login">登录</router-link>
+        <router-link to="/post">文章管理</router-link>
+        <router-link to="/a">A</router-link>
+    </div>
+    <div>
+        <router-view></router-view>
+    </div>
+</div>
+<script type="text/javascript">
+    var routes = [
+        {
+            path: '/',
+            component: {
+                template: `<h1>首页</h1>`
+            }
+        },
+        {
+            path: '/a',
+            meta: {
+                login_required: true,
+            },
+            component: {
+                template: `<h1>A</h1>`
+            }
+        },
+        {
+            path: '/login',
+            component: {
+                template: `<h1>登录</h1>`
+            }
+        },
+        {
+            path: '/post',
+            meta: {
+                login_required: true
+            },
+            component: {
+                template: `<div>
+        <h1>帖子管理</h1>
+        <router-link to="rain" append>后座</router-link>
+        <router-view></router-view>
+      </div>`,
+            },
+            children: [
+                {
+                    path: 'rain',
+                    component: {
+                        template: `<h2>雨天asdf后座</h2>`
+                    }
+                }
+            ]
+        },
+    ];
+
+    var router = new VueRouter({
+        routes: routes,
+    });
+
+    router.beforeEach(function (to, from, next) {
+        var logged_in = true;
+
+        if (!logged_in && to.matched.some(function (item) {
+            return item.meta.login_required;
+        }))
+            next('/login');
+        else
+            next();
+    });
+
+    new Vue({
+        el: '#app',
+        router: router,
+    });
+
+</script>
+</body>
+</html>

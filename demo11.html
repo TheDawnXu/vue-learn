@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="i in items">
+                {{ i | uppercase('医院指标：') }}
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        Vue.filter('uppercase', function (val, pre) {
+            return pre + val.toUpperCase();
+        });
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                items: ['xhdb', 'bxb']
+            }
+        });
+
+
+    </script>
+</body>
+</html>

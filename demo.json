@@ -1,0 +1,53 @@
+{
+  "code": "1",
+  "msg": "成功",
+  "result": [{
+    "referencetext": "\n                      ",
+    "normalflagname": "↓",
+    "subitemcode": "C0078",
+    "warnhighvalue": null,
+    "memo": null,
+    "numresult": "1.36",
+    "subitemname": "白蛋白/球蛋白",
+    "warnlowvalue": null,
+    "unit": null,
+    "micro": [],
+    "item_code": "C0078",
+    "referencemax": 2.4,
+    "referencemin": 1.2,
+    "lab_result_composite_item_sn": 14029528,
+    "textresult": null
+  }, {
+    "referencetext": "\n                      ",
+    "normalflagname": "↑",
+    "subitemcode": "C0082",
+    "warnhighvalue": null,
+    "memo": null,
+    "numresult": "44.7",
+    "subitemname": "白蛋白",
+    "warnlowvalue": null,
+    "unit": "g/L",
+    "micro": [],
+    "item_code": "C0082",
+    "referencemax": 55,
+    "referencemin": 40,
+    "lab_result_composite_item_sn": 14029528,
+    "textresult": null
+  }, {
+    "referencetext": "\n                      ",
+    "normalflagname": "-",
+    "subitemcode": "C0083",
+    "warnhighvalue": null,
+    "memo": null,
+    "numresult": "87",
+    "subitemname": "*碱性磷酸酶",
+    "warnlowvalue": null,
+    "unit": "U/L",
+    "micro": [],
+    "item_code": "C0083",
+    "referencemax": 125,
+    "referencemin": 45,
+    "lab_result_composite_item_sn": 14029528,
+    "textresult": null
+  }]
+}

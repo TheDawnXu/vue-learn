@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>演示指令 v-on</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on="{mouseenter: enterFun, mouseleave: leaveFun}">Click</button>
+        <button @click="clickFun">Click</button>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{
+            },
+            methods:{
+                enterFun: function () {
+                    console.log("in in in");
+                },
+                leaveFun: function () {
+                    console.log("out out out");
+                },
+                clickFun: function () {
+                    console.log("click");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

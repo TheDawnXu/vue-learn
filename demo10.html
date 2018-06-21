@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>组件通信</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mycomponent></mycomponent>
+        <yourcomponent></yourcomponent>
+    </div>
+    <script type="text/javascript">
+        // 把my的信息传给有your
+        var midle = new Vue();
+
+        Vue.component('mycomponent',{
+            template: `
+                <div>
+                    我：<input @keyup="say" v-model="word"/>
+                </div>
+            `,
+            data: function () {
+                return {
+                    word: ''
+                }
+            },
+            methods: {
+                say: function () {
+                    midle.$emit('listen', this.word)
+                }
+            }
+        });
+
+        Vue.component('yourcomponent',{
+            template: `
+                <div>
+                    你：<input v-model="listen_word"/>
+                </div>
+            `,
+            data: function () {
+                return {
+                    listen_word: ''
+                }
+            },
+            mounted: function () {
+                var me = this;
+                midle.$on('listen', function (data) {
+                    me.listen_word = data;
+                });
+            }
+        });
+
+        var app = new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

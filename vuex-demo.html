@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>veux-功能演示</title>
+    <script src="./vue.js"></script>
+    <script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.js"></script>
+</head>
+<body>
+<body>
+<div id="app">
+    <mycomponent></mycomponent>
+    <yourcomponent></yourcomponent>
+</div>
+<script type="text/javascript">
+    const store = new Vuex.Store({
+        // 定义状态
+        state: {
+            content: '组件通信测试'
+        }
+    })
+
+    Vue.component('mycomponent',{
+        template: `
+                <div>
+                    我：<input v-model="content"/>
+                </div>
+        `,
+        data: function () {
+            return {
+                word: ''
+            }
+        },
+        computed: {
+            content: {
+                get () {
+                    return this.$store.state.content;
+                },
+                set (content) {
+                    this.$store.state.content = content;
+                }
+            }
+        }
+    });
+
+    Vue.component('yourcomponent',{
+        template: `
+                <div>
+                    你：<input v-model="content"/>
+                </div>
+            `,
+        data: function () {
+            return {
+                listen_word: ''
+            }
+        },
+        computed: {
+            content: {
+                get () {
+                    return this.$store.state.content;
+                },
+                set (content) {
+                    this.$store.state.content = content;
+                }
+            }
+        }
+    });
+
+    var app = new Vue({
+        el: '#app',
+        store:store
+    });
+</script>
+</body>
+</html>

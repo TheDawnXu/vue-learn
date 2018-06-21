@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>veux-功能演示</title>
+    <script src="./vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+</head>
+<body>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in items">
+            {{ item.subitemname }} || {{ item.numresult }} || {{ item.normalflagname }}
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+    Vue.prototype.$axios = axios
+
+    var app = new Vue({
+        el: '#app',
+        data:{
+            items: null
+        },
+        created:function () {
+            var me = this;
+            this.$axios.get('./demo.json').then(function (response) {
+                me.items = response.data.result
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    })
+</script>
+</body>
+</html>

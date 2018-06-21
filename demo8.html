@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mycomponent></mycomponent>
+        <mycomponent></mycomponent>
+        <mycomponent></mycomponent>
+        <mycomponent></mycomponent>
+    </div>
+    <div id="app2">
+        <yourcomponent></yourcomponent>
+    </div>
+    <script type="text/javascript">
+        // 组件的data必须是function 属性定义
+        Vue.component('mycomponent', {
+            template: '<button @click="alertFun">{{ content }}</button>',
+            data: function () {
+                return {
+                    content: 555
+                }
+            },
+            // data: {
+            //     content: 666
+            // },
+            methods:{
+                alertFun:function () {
+                    this.content++;
+                }
+            }
+        });
+
+        var app = new Vue({
+            el: '#app'
+        });
+
+
+        var your_component = {
+            template: '<button @click="on_click">弹弹弹</button>',
+            methods: {
+                on_click: function () {
+                    alert('bbb');
+                }
+            }
+        };
+
+        var app2 = new Vue({
+            el: '#app2',
+            components: {
+                "yourcomponent": your_component
+            }
+        });
+    </script>
+</body>
+</html>

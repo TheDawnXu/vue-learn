@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>演示数据绑定</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li><input type="text" v-model="name">{{ name }}</li>
+            <li><input type="text" v-model="age">{{ age }}</li>
+            <li><input type="text" v-model="sex">{{ sex }}</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{
+                name: 'xxx',
+                age: 12,
+                sex: 'male'
+            }
+        });
+        
+        
+    </script>
+</body>
+</html>

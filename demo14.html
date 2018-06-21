@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>混合 mixin</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app1">
+        这是VM1, {{ name }}, {{ age }}
+    </div>
+    <div id="app2">
+        这是VM2, {{ name }}, {{ age }}
+    </div>
+    <script type="text/javascript">
+        
+        var mixin = {
+            data:function () {
+                return {name:'xxxx', age: 12}
+            }
+        }
+
+        var app1 = new Vue({
+            el: '#app1',
+            data: {
+                name: 'uuu'
+            },
+            mixins: [mixin]
+        });
+
+        var app2 = new Vue({
+            el: '#app2',
+            mixins: [mixin]
+        });
+
+    </script>
+</body>
+</html>

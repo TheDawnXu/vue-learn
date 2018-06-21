@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>演示指令 v-bind</title>
+    <script src="./vue.js"></script>
+    <style>
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button :class="{active: isActive}">Click</button>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{
+                isActive:false
+            }
+        });
+    </script>
+</body>
+</html>

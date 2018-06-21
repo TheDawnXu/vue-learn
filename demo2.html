@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>演示指令 v-for</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="s in stu">名字：{{ s.name }} 年龄：{{s.age}}</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{
+                stu: [
+                    {name:"xiaozhao", age: 12},
+                    {name:"xiaoqiao", age: 13},
+                    {name:"xiaosun", age: 14},
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

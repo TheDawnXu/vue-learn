@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽 slots</title>
+    <script src="./vue.js"></script>
+    <style>
+        .title{
+            color: red;
+            font-size: 10px;
+        }
+
+        .content{
+            color: black;
+            font-size: 8px;
+        }
+
+        .footer{
+            color: blue;
+            font-size: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <slotdemo>
+            <div slot="title">这是一个标题</div>
+            <div slot="content">这是内容</div>
+            <div slot="footer">这是页脚</div>
+        </slotdemo>
+    </div>
+    <template id="temp">
+        <div>
+            <div class="title">
+                <slot name="title"></slot>
+            </div>
+            <div class="content">
+                <slot name="content"></slot>
+            </div>
+            <div class="footer">
+                <slot name="footer"></slot>
+            </div>
+        </div>
+    </template>
+    <script type="text/javascript">
+        Vue.component('slotdemo', {
+            template: '#temp'
+        });
+
+        var app = new Vue({
+            el: '#app'
+        });
+
+    </script>
+</body>
+</html>
