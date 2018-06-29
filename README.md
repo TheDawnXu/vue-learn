@@ -5,11 +5,10 @@
 [TOC]
 
 
-## VUE简介
-
-[VUE简介](https://blog.csdn.net/liang377122210/article/details/71545459)  
-声明式渲染：简化数据的渲染方式，提供指令和双向绑定机制  
-组件化应用构建：提高HTML的独立性和可服用性
+## VUE简介  
+* [VUE简介](https://blog.csdn.net/liang377122210/article/details/71545459)（为什么用vue，vue的优点，vue应该怎么学）
+* 声明式渲染：简化数据的渲染方式，提供指令和双向绑定机制
+* 组件化应用构建：提高HTML的独立性和可服用性
 
 
 ## VUE基本语法介绍
@@ -17,7 +16,6 @@
 ### 数据双向绑定
 
 * 定义vue实例   
-
     new Vue({...})
 * v-model 和 {{ ... }} 的数据绑定   
     在控制台输入 app.name = 'yyy' 页面同步更新
@@ -126,13 +124,14 @@ vue提供的路由工具，主要是vue项目大多有组件组成，使用href�
 vue-router主要有两部分，一是路径，一个是页面渲染的位置，使用vue-router的好处是方便在跳转使进行一些操作
 
 
-## 工具介绍
+## 扩展的内容（了解）
+* nodeJS，npm，Webpack，ES6，elementUI
 * Vue Devtools 是vue的调试工具，可以调试生成的vue实例和状态管理工具vuex 
 
 ## 项目配置流程
 
 * 安装vue-cli 手脚架：npm install vue-cli -g
-* 创建项目，使用web项目模板 ue init \[vue-cli模板名称] \[项目文件夹]：vue init webpack vue-project-1
+* 创建项目，使用web项目模板 vue init \[vue-cli模板名称] \[项目文件夹]：vue init webpack vue-project-1
 * 进入项目目录，安装需要的配置：npm install
 * autoOpenBrowser属性表示启动完成是否自动打开浏览器
 * 修改项目端口号，默认8080：修改为8099，修改文件./config/index.js中的17行（port），访问地址：127.0.0.1:8099
