@@ -13,7 +13,7 @@
 
 ## VUE基本语法介绍
 
-### 数据双向绑定
+### 数据双向绑定 demo1
 
 * 定义vue实例   
     new Vue({...})
@@ -24,44 +24,44 @@
     ，但是不支持完整的js代码，比如：if(...){...}
 
 
-### v-for 循环指令的使用
+### v-for 循环指令的使用 demo2
 
 * 指令
 * 遍历集合
 * 在{{ ... }} 中解析json
 * 在控制台添加数据 app.stu.push({name:'xiaoli', age: 15})
 
-### v-bind 指令的使用
+### v-bind 指令的使用 demo3
 
 * 属性绑定
 * 缩写的语法
 
-### v-on 定义事件
+### v-on 定义事件 demo4
 
 * 基本使用
 * 批量定义
 * vue对象的methods属性
 * 缩写
 
-### v-model 与value的绑定
+### v-model 与value的绑定 demo5
 
 * 使用范围：input select textarea
-* 修饰符： number转换为数字 trim去掉两边的控制 lazy延迟更新
+* 修饰符：v-model.XXX (number转换为数字 trim去掉两边的控制 lazy延迟更新)
 
-### v-if 和 v-show
+### v-if 和 v-show demo6
 
 * 控制元素是否渲染/显示
-* v-fi和v-show的区别
+* v-if和v-show的区别
 * 可以和v-for连用
 
-### 计算属性 computed
+### 计算属性 computed demo7
 
 * 作用：通过已有的属性计算新的属性
 * 为什么不用表达式计算   
     可以直接在{{...}}中写表达式，但是使用表达式的方式就不能再
     vue对象中获取改属性的值，所以建议使用计算属性
 
-### 组件
+### 组件 demo8 组建属性 demo9
 
 * 定义组件 全局组件和局部组件   
     Vue.component({...})  
@@ -73,7 +73,7 @@
 * 组件的属性定义
     props:['a','b']，可以在组件的标签上使用，实现动态效果
 
-### 组件通信
+### *组件通信 demo10
 
 * 使用中间件实现组件同行
     定义一个vue实例来作为通信的中间件
@@ -81,7 +81,7 @@
     实例的$XXX可以获取实例的内容，包含数据，方法，生命周期
     $on用来绑定事件，$.emit用来触发事件
 
-### 过滤器
+### 过滤器 demo11
 
 * 定义过滤器   
     Vue.filter('/*过滤器名称*/', function (val, pre) {});
@@ -91,10 +91,10 @@
 * 建议
     简单的操作可以使用过滤器，但是复杂的更建议使用计算属性
     
-### 自定义指令
+### *自定义指令
 
 * 定义指令
-    Vue.directive('/*指令名称*/', function (el, bind) {...});
+    Vue.directive('/* 指令名称 */', function (el, bind) {...});
     el：获取了该指令的dom元素
     bind：使用该指令是的参数
 * 获取bind中参数的方法
