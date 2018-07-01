@@ -6,9 +6,9 @@
 
 
 ## VUE简介  
-* [VUE简介](https://blog.csdn.net/liang377122210/article/details/71545459)（为什么用vue，vue的优点，vue应该怎么学）
+* [VUE简介](https://blog.csdn.net/liang377122210/article/details/71545459)
 * 声明式渲染：简化数据的渲染方式，提供指令和双向绑定机制
-* 组件化应用构建：提高HTML的独立性和可服用性
+* 组件化应用构建：提高HTML的独立性和可复用性
 
 
 ## VUE基本语法介绍

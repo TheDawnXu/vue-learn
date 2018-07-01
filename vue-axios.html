@@ -23,7 +23,7 @@
         data:{
             items: null
         },
-        created:function () {
+        created:function () { // 生命周期钩子
             var me = this;
             this.$axios.get('./demo.json').then(function (response) {
                 me.items = response.data.result
