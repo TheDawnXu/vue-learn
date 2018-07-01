@@ -91,7 +91,7 @@
 * 建议
     简单的操作可以使用过滤器，但是复杂的更建议使用计算属性
     
-### *自定义指令
+### *自定义指令 demo12
 
 * 定义指令
     Vue.directive('/* 指令名称 */', function (el, bind) {...});
@@ -101,7 +101,7 @@
     打印bind，可以找到bind的相关的内容，
     bind.value获取指令的内容，bind.modifiers获取指令参数
     
-### 混合
+### 混合 demo14
 
 * 混合属性的使用
     mixins: [mixin] 使用mixins的来继承其他实例的属性，
@@ -110,13 +110,11 @@
     在使用混合的实例依然可以定义混合对象中已经含有的属性，会重写混合对象的属性
     
 ## vuex介绍
-Vue 的状态管理工具，主要用来实现组件间的通信``
+Vue 的状态管理工具，主要用来实现组件间的通信
 
 
 ## vue-axios介绍  
-vue-axios是vue官方推荐的一种http请求工具，作用和ajax类似，
-只是语法上稍有区别
-参考
+vue-axios是vue官方推荐的一种http请求工具，作用和ajax类似，只是语法上稍有区别
 
 
 ## vue-router介绍
@@ -129,17 +127,22 @@ vue-router主要有两部分，一是路径，一个是页面渲染的位置，�
 * Vue Devtools 是vue的调试工具，可以调试生成的vue实例和状态管理工具vuex 
 
 ## 项目配置流程
-
-* 安装vue-cli 手脚架：npm install vue-cli -g
-* 创建项目，使用web项目模板 vue init \[vue-cli模板名称] \[项目文件夹]：vue init webpack vue-project-1
-* 进入项目目录，安装需要的配置：npm install
-* autoOpenBrowser属性表示启动完成是否自动打开浏览器
-* 修改项目端口号，默认8080：修改为8099，修改文件./config/index.js中的17行（port），访问地址：127.0.0.1:8099
-* 工程目录创建，不同的文件或功能分配到不同的文件夹下
-* 配置路径别名，方便访问，文件./build/webpack.base.conf.js
+* 进入项目跟目录
+* 进入项目目录，安装需要的配置：npm install(有一些依赖需要特殊的环境，比如python等，按需求安装即可)
+* 修改项目端口号，修改文件./config/index.js中的28行（port），访问地址：127.0.0.1:9000
+* 工程目录创建，不同的文件或功能分配到不同的文件夹下   
+|- src/    
+|  |- assets/           // 静态文件目录：css、images等   
+|  |- components/       // 组件文件目录   
+|  |- page/             // 具体业务页面目录   
+|  |- router/           // vue-router的路由目录   
+|  |- store/            // vuex目录    
+|  |- util/             // 工具类目录    
+|- main.js              // webpack入口文件    
+|- App.vue              // 入口页面    
+* 配置路径别名，方便访问，文件./build/webpack.base.conf.js下22行
 * 修改编译时的文件名，防止出现各种随机的文件名，文件./bulid/webpack/prod.conf.js
-* 安装 npm install node-sass sass-loader less less-loader --save-dev 这些是css的工具
-* 配置./conf/index.js的第13行的proxyTable，设置跨域访问，这种设置只在开发时好用
+* 配置./config/index.js的第32行的proxyTable，设置跨域访问，这种设置只在开发时好用（[博客:服务端的跨域设置](https://blog.csdn.net/u011517841/article/details/68490586)）
 * 使用 npm run build 构建项目 
 
 
@@ -149,5 +152,3 @@ vue-router主要有两部分，一是路径，一个是页面渲染的位置，�
 * [vuex官网](https://vuex.vuejs.org/zh/)
 * [ELEMENT官网](http://element.eleme.io/#/zh-CN/component/installation)
 
-
-       

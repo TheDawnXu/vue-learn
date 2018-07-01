@@ -9,8 +9,8 @@
 <body>
 <body>
 <div id="app">
-    <mycomponent></mycomponent>
-    <yourcomponent></yourcomponent>
+    <component1></component1>
+    <component2></component2>
 </div>
 <script type="text/javascript">
     const store = new Vuex.Store({
@@ -20,7 +20,7 @@
         }
     })
 
-    Vue.component('mycomponent',{
+    Vue.component('component1',{
         template: `
                 <div>
                     我：<input v-model="content"/>
@@ -43,7 +43,7 @@
         }
     });
 
-    Vue.component('yourcomponent',{
+    Vue.component('component2',{
         template: `
                 <div>
                     你：<input v-model="content"/>
