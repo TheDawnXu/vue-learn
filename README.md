@@ -1,10 +1,5 @@
 # VUE笔记
 
-## 目录  
-
-[TOC]
-
-
 ## VUE简介  
 * [VUE简介](https://blog.csdn.net/liang377122210/article/details/71545459)
 * 声明式渲染：简化数据的渲染方式，提供指令和双向绑定机制
@@ -123,7 +118,7 @@ vue-router主要有两部分，一是路径，一个是页面渲染的位置，�
 
 
 ## 扩展的内容（了解）
-* nodeJS，npm，Webpack，ES6，elementUI
+* nodeJS，npm，Webpack，ES6，elementUI, vue_cli
 * Vue Devtools 是vue的调试工具，可以调试生成的vue实例和状态管理工具vuex 
 
 ## 项目配置流程
